@@ -260,13 +260,6 @@ function App() {
                     <span>Mask YouTube title</span>
                   </label>
                 )}
-                {answerVisible && (
-                  <div className="answer-reveal" aria-live="polite">
-                    <div className="answer-icon" aria-hidden="true">✳</div>
-                    <div><span className="section-kicker">THE ANSWER</span><h2>{activeMovie.title}</h2><p>{activeMovie.year} <span className="answer-separator">/</span> Directed by {activeMovie.director}</p></div>
-                    <span className="answer-year">{activeMovie.year}</span>
-                  </div>
-                )}
               </>
             ) : (
               <div className="empty-screen">
@@ -279,7 +272,18 @@ function App() {
           </div>
 
           <div className="play-controls">
-            <div className="play-prompt"><span className="prompt-star" aria-hidden="true">✳</span><span>{answerVisible ? 'Ready for another round?' : activeMovie ? 'Got a guess?' : 'Scene clips are being prepared.'}</span></div>
+            {answerVisible && activeMovie ? (
+              <div className="answer-reveal" aria-live="polite">
+                <span className="answer-icon" aria-hidden="true">✳</span>
+                <div className="answer-text">
+                  <span className="section-kicker">The answer</span>
+                  <h2>{activeMovie.title}</h2>
+                  <p>{activeMovie.year} <span className="answer-separator">/</span> Directed by {activeMovie.director}</p>
+                </div>
+              </div>
+            ) : (
+              <div className="play-prompt"><span className="prompt-star" aria-hidden="true">✳</span><span>{activeMovie ? 'Got a guess?' : 'Scene clips are being prepared.'}</span></div>
+            )}
             <button className="primary-button play-cta" onClick={handleGameAction} disabled={!activeMovie && playableMovies.length === 0}>
               {!activeMovie || answerVisible ? (playableMovies.length ? 'Next move' : 'Clips coming soon') : 'Show answer'}
               <span aria-hidden="true">{!activeMovie || answerVisible ? '↗' : '✳'}</span>

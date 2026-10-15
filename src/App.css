@@ -266,14 +266,14 @@
 .clip-play-button:hover { background: #d94331; }
 .clip-play-button:focus-visible { outline: 3px solid var(--mint); outline-offset: 4px; }
 .frame-caption { display: flex; justify-content: space-between; padding-top: 11px; color: #a4b0ad; font-size: 9px; }
-.answer-reveal { display: flex; align-items: center; gap: 18px; margin-top: 16px; padding: 20px 24px; background: var(--paper-deep); animation: reveal 300ms ease-out both; }
-.answer-icon { color: var(--coral); font-size: 28px; }
+.answer-reveal { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 16px; padding: 12px 18px; background: var(--paper-deep); animation: reveal 300ms ease-out both; }
+.answer-icon { flex: 0 0 auto; color: var(--coral); font-size: 24px; }
+.answer-text { min-width: 0; }
 .answer-reveal .section-kicker { font-size: 9px; }
-.answer-reveal h2 { margin: 3px 0; font-family: var(--display); font-size: 29px; line-height: 1; text-transform: uppercase; }
-.answer-reveal p { margin: 0; color: var(--muted); font-size: 13px; }
+.answer-reveal h2 { margin: 3px 0; font-family: var(--display); font-size: 26px; line-height: 1.05; text-transform: uppercase; }
+.answer-reveal p { margin: 0; color: var(--muted); font-size: 12px; }
 .answer-separator { margin: 0 7px; color: var(--coral); }
-.answer-year { margin-left: auto; color: var(--coral); font-family: var(--display); font-size: 34px; font-weight: 900; }
-.play-controls { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.play-controls { min-height: 140px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .play-prompt { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
 .prompt-star { color: var(--coral); font-size: 19px; }
 .play-cta { min-width: 190px; }
@@ -326,12 +326,11 @@
   .video-frame { width: 100%; }
   .clip-play-button { padding: 12px 16px; font-size: 13px; }
   .frame-caption { font-size: 7px; }
-  .answer-reveal { gap: 11px; padding: 16px 14px; }
-  .answer-icon { font-size: 22px; }
-  .answer-reveal h2 { font-size: 22px; }
-  .answer-reveal p { font-size: 11px; }
-  .answer-year { font-size: 25px; }
-  .play-controls { gap: 12px; padding: 17px 0; }
+  .answer-reveal { gap: 10px; padding: 10px 12px; }
+  .answer-icon { font-size: 18px; }
+  .answer-reveal h2 { font-size: 18px; }
+  .answer-reveal p { font-size: 10px; }
+  .play-controls { min-height: 96px; gap: 10px; padding: 12px 0; }
   .play-prompt { font-size: 12px; }
   .play-cta { min-width: 148px; min-height: 50px; gap: 12px; padding: 0 14px; font-size: 13px; }
   .catalog-note { flex-wrap: wrap; font-size: 8px; }
